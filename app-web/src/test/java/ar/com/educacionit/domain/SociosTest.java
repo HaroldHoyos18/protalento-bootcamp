@@ -1,4 +1,4 @@
-package ar.com.educacionit.domain;
+ package ar.com.educacionit.domain;
 
 import ar.com.educacionit.dao.impl.SocioDaoImpl;
 
@@ -28,5 +28,8 @@ public class SociosTest {
 		}else {
 			System.out.println("Se ha encontrado al socio" + socio);
 		}
+		
+		
+		
 		}
 	}

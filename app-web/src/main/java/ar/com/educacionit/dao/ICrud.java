@@ -7,6 +7,9 @@ public interface ICrud {
 	public Socios create(Socios socioAcrear);
 
 	public Socios FindById(Long id);
+	
+	public Socios[] FindAll();
 	//despues completo lo demas
+
 
 }
