@@ -1,19 +1,18 @@
 package ar.com.educacionit.dao.impl;
 
 
+import ar.com.educacionit.dao.SociosDao;
 import ar.com.educacionit.domain.Socios;
 
-public class SocioDaoImpl implements SocioSQLCustom {
+public class SocioDaoImpl implements SociosDao {
 
-public Socios create(Socios socio) {
+public Socios save(Socios socio) {
 	// mas adelante veremos como conectarnos a la db
 	//insertar datos
-	String sql = "Insert into socios(nombre, apellido, email, direccion) Values('Carlos','lopez','krloss@gmail.com','av siempre viva 46')";
-	System.out.println("Ejecutando sql"+ sql);
-	return new Socios(10L,"Carlos","Lopez","krloss@gmail.com","av siempre viva 46",1l);
+	return null;
 }
 //read by id
-public Socios FindById(Long id) {
+public Socios getOne(Long id) {
 	String sql ="SELECT * FROM SOCIOS WHERE ID= "+ id;
 
 	return new Socios(id,"Carlos","Lopez","krloss@gmail.com","av siempre viva 46",1l);
@@ -32,9 +31,26 @@ public Socios[] FindAll() {
 	return new Socios[] {socio1,socio2,socio3};
 	
 }
+
+public void delete(Long id) {
+	// TODO Auto-generated method stub
+String sql = "DELETE FROM socios WHERE id = "+ id;	
+}
+
+public void update(Socios entity) {
+String sql = "UPDATE socios "+ "SET direccion = "+ entity.getDireccion() +", APELLIDO = " + entity.getApellido() +
+", paises_id =" + entity.getPaisesid() +"WHERE id =" + entity.getId() ;
+System.out.println(sql);	
+}
+
+/*
 public Socios selectCustom() {
 	String sql = "Select nombre, apellido from socios";
 		return null;
+		
+		
 	}
+	
+	*/
 }
 

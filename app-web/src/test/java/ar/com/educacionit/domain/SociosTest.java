@@ -1,6 +1,9 @@
  package ar.com.educacionit.domain;
 
-import ar.com.educacionit.dao.impl.SocioDaoImpl;
+import ar.com.educationit.service.CategoriaService;
+import ar.com.educationit.service.SociosService;
+import ar.com.educationit.service.Impl.CategoriaServiceImpl;
+import ar.com.educationit.service.Impl.SociosServiceImpl;
 
 public class SociosTest {
 
@@ -15,21 +18,14 @@ public class SociosTest {
 	    String direccion = "Calle 13";
 		Long pais = 1l;//1=ARG
 		
-		//uso ek constructir de ka ckase sicuis
-		SocioDaoImpl socioImpl = new SocioDaoImpl();
 		
-		Socios socio = socioImpl.create(new Socios(nombre,apellido,email,direccion,pais));
-		
-		System.out.println("se ha creado el socios id: " + socio.getId());
-		
-		Socios otroSocio = socioImpl.FindById(5l);
-		if(otroSocio != null) {
-		System.out.println("se ha creado el socios id: "+socio.getId());
-		}else {
-			System.out.println("Se ha encontrado al socio" + socio);
-		}
-		
-		
-		
-		}
+		SociosService service = new SociosServiceImpl();	
+	Socios socio = new Socios (nombre, apellido, email, direccion, pais);
+	service.save(socio);
+	
+	CategoriaService cservice = new CategoriaServiceImpl();
+	Categorias categorias = new Categorias("televisores","abc1234");
+	cservice.save(categorias);
+	
+	}
 	}

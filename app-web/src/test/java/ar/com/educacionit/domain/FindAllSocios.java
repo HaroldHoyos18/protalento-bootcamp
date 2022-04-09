@@ -14,7 +14,7 @@ public class FindAllSocios {
 	
 	Socios[] vectorDeSociso = socioImpl.FindAll();
 	
-	for(Socios socios : vectorDeSociso) {
+	for(Socios socio : vectorDeSociso) {
 		
 		System.out.println(socio);
 		
