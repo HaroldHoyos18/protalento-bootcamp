@@ -26,6 +26,6 @@ public class SociosTest {
 	CategoriaService cservice = new CategoriaServiceImpl();
 	Categorias categorias = new Categorias("televisores","abc1234");
 	cservice.save(categorias);
-	
+	//1:16:22
 	}
 	}

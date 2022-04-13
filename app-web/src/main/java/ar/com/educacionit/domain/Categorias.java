@@ -1,6 +1,6 @@
 package ar.com.educacionit.domain;
 
-public class Categorias {
+public class Categorias extends Entity{
 
 
 
@@ -8,6 +8,9 @@ public class Categorias {
 	private Long id;
 	private String descripcion;
 	private String codigo;
+	
+	public Categorias() {}
+	
 	public Categorias(Long id, String descripcion, String codigo) {
 		this.id = id;
 		this.descripcion = descripcion;
@@ -17,10 +20,10 @@ public class Categorias {
 		this.descripcion = descripcion;
 		this.codigo = codigo;
 	}
-	public Long getId() {
+	public Long getid() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setid(Long id) {
 		this.id = id;
 	}
 	public String getDescripcion() {

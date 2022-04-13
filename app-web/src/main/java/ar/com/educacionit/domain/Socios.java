@@ -1,6 +1,6 @@
 package ar.com.educacionit.domain;
 
-public class Socios {
+public abstract class Socios extends Entity{
 
 	
 	private Long id;
@@ -10,6 +10,7 @@ public class Socios {
 	private String direccion;
 	private Long paisesid;
 	
+	public Socios() {}
 	
 	public Socios(Long id, String nombre, String apellido, String email, String direccion, Long paisesid) {
 		this.id = id;

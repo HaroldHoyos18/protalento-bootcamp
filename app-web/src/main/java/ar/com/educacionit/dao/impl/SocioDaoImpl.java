@@ -4,17 +4,23 @@ package ar.com.educacionit.dao.impl;
 import ar.com.educacionit.dao.SociosDao;
 import ar.com.educacionit.domain.Socios;
 
-public class SocioDaoImpl implements SociosDao {
+public class SocioDaoImpl extends JDBCDaoBase<Socios> implements SociosDao {
 
+	public SocioDaoImpl() {
+		
+		super("socios");//es la tabla
+	}
+	
+	/*
 public Socios save(Socios socio) {
-	// mas adelante veremos como conectarnos a la db
-	//insertar datos
-	return null;
+String sql = "INSERT INTO SOCIOS (nombre, apellido, email, direccion,pais)";
+	System.out.println("Ejecutando sql:" + sql);
+	return new Socios(10L,"carlos","lopez","krloss@gmail.com","calle siempre viva",1l);
 }
 //read by id
 public Socios getOne(Long id) {
 	String sql ="SELECT * FROM SOCIOS WHERE ID= "+ id;
-
+System.out.println("ejecutando sql: "+sql);
 	return new Socios(id,"Carlos","Lopez","krloss@gmail.com","av siempre viva 46",1l);
 
 	
