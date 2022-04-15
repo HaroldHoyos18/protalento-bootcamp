@@ -1,6 +1,6 @@
 package ar.com.educacionit.domain;
 
-public abstract class Socios extends Entity{
+public class Socios extends Entity{
 
 	
 	private Long id;
@@ -30,15 +30,6 @@ public abstract class Socios extends Entity{
 		this.paisesid = paisesid;
 	}
 
-
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 
 	public String getNombre() {
@@ -97,7 +88,19 @@ public abstract class Socios extends Entity{
 				+ ", direccion=" + direccion + ", paisesid=" + paisesid + "]";
 	}
 
-	
+	@Override
+	public Long getid() {
+		// TODO Auto-generated method stub
+		return id;
+	}
+
+	@Override
+	public void setid(Long id) {
+		this.id = id;
+		
+	}
+
+
 	
 
 

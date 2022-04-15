@@ -4,11 +4,12 @@ import ar.com.educationit.service.CategoriaService;
 import ar.com.educationit.service.SociosService;
 import ar.com.educationit.service.Impl.CategoriaServiceImpl;
 import ar.com.educationit.service.Impl.SociosServiceImpl;
+import ar.com.educationit.service.exception.ServiceException;
 
 public class SociosTest {
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ServiceException {
 
 		//alguien cargo los datos desde teclado
 		String nombre = "JUAN";
