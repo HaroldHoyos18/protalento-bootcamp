@@ -24,9 +24,19 @@ public class SociosTest {
 	Socios socio = new Socios (nombre, apellido, email, direccion, pais);
 	service.save(socio);
 	
+	socio.setApellido("Nuevo Apellido");
+	socio.setNombre("nuevo nombre");
+	socio.setEmail("email@gmail");
+	
+	service.update(socio);
+	
 	CategoriaService cservice = new CategoriaServiceImpl();
 	Categorias categorias = new Categorias("televisores","abc1234");
 	cservice.save(categorias);
 	//1:16:22
+	
+	categorias.setCodigo("10000");
+	categorias.setDescripcion("descripcion nueva");
+	cservice.update(categorias);
 	}
 	}

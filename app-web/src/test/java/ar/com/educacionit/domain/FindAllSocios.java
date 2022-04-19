@@ -1,5 +1,7 @@
  package ar.com.educacionit.domain;
 
+import java.util.List;
+
 import ar.com.educacionit.dao.impl.SocioDaoImpl;
 
 public class FindAllSocios {
@@ -12,7 +14,7 @@ public class FindAllSocios {
 		
 	SocioDaoImpl socioImpl = new SocioDaoImpl();
 	
-	Socios[] vectorDeSociso = socioImpl.FindAll();
+	List<Socios> vectorDeSociso = socioImpl.FindAll();
 	
 	for(Socios socio : vectorDeSociso) {
 		

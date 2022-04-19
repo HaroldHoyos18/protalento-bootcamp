@@ -10,7 +10,19 @@ public class CategoriaDaoImpl extends JDBCDaoBase<Categorias> implements Categor
 		
 		super("categorias"); 
 	}
+	public String getSaveSQL(Categorias entity) {
+		// TODO Auto-generated method stub
+	return ("(descripcion, codigo) values ("+entity.getDescripcion()+","+entity.getCodigo()+")" );
+	}
 	
+	@Override
+	public String getUpdateSQL(Categorias entity) {
+		String sql = "descripcion= "+entity.getCodigo()+"',";
+		sql = sql+ "codigo= "+entity.getDescripcion()+"',";
+		
+	
+		return sql;
+	}
 	/*	
 
 	public Categorias getOne(Long id) {

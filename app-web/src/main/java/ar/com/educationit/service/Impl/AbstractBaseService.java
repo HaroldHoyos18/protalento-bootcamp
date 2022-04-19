@@ -1,5 +1,7 @@
 package ar.com.educationit.service.Impl;
 
+import java.util.List;
+
 import ar.com.educacionit.dao.GenericDao;
 import ar.com.educacionit.dao.Exceptions.DuplicatedException;
 import ar.com.educacionit.dao.Exceptions.GenericException;
@@ -40,12 +42,11 @@ public class AbstractBaseService<T> implements GenericService<T> {
 		return entity;
 	}
 
-	public void delete(Long id) {
+	public void delete(Long id) throws ServiceException{
 		try {
-			genericDao.getOne(id);
+			genericDao.delete(id);
 		} catch (GenericException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ServiceException("Error eleminando entity id: ",e);
 		}
 		
 	}
@@ -65,7 +66,7 @@ public class AbstractBaseService<T> implements GenericService<T> {
 		
 	}
 
-	public T[] FindAll() {
+	public List<T> FindAll() {
 		return genericDao.FindAll();
 	}
 }
