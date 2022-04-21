@@ -12,12 +12,12 @@ public class FindAllSociosTest {
 		
 	SocioDaoImpl socioImpl = new SocioDaoImpl();
 	
-	Socios[] vectorDeSociso = socioImpl.FindAll();
+	/*List<Socios> vectorDeSociso = socioImpl.FindAll();
 	
 	for(Socios socio : vectorDeSociso) {
 		
 		System.out.println(socio);
 		
-	}
+	}*/
 		}
 	}
